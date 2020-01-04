@@ -1,0 +1,25 @@
+.team-overview .tailor-box {
+    padding: 10px;
+
+}
+
+
+.tailor-ui .team-overview .tailor-grid {
+	justify-content: center;
+}
+.tailor-ui .team-overview .tailor-grid__item {
+  padding:5px;
+  border: none;
+  border-style:none !important;
+  width:auto !important;
+  flex:none;  
+}
+.tailor-ui .team-overview .tailor-button__inner {
+  padding:0;
+  display:block;
+  box-shadow: none;
+}
+.tailor-ui .team-overview .tailor-button__inner i {
+  box-shadow:none;
+  display:block;
+}
