@@ -21,16 +21,16 @@ get_header();
 
 <?php get_template_part( 'content', get_post_format() ); ?>
 
-<h2>Latest tweets</h2>
+<h2 style="width: 360px;">Latest <a href="https://twitter.com/blockbar070" target="_blank">tweets</a></h2>
 
 <?php
-echo do_shortcode('[fts_twitter twitter_name=blockbar070 tweets_count=10 cover_photo=no stats_bar=yes show_retweets=no show_replies=no search=%23blockbar%20OR%20%23biw070%20OR%20%40blockbar070%20OR%20%40the_hague_tech]');
+echo do_shortcode('[fts_twitter twitter_name=blockbar070 tweets_count=2 cover_photo=no stats_bar=yes show_retweets=no show_replies=no search=%23blockbar%20OR%20%23biw070%20OR%20%40blockbar070%20OR%20%40the_hague_tech]');
 ?>
 
 <style type="text/css">
   
 .Index-community-posts {
-  width: 600px;
+  width: 200px;
   max-width: 100%;
   margin: 0 auto;
   display: flex;
