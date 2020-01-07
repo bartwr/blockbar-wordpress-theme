@@ -20,14 +20,10 @@
 
     <wrapper>
 
-      <nav class="main-nav">
-        <ul id="menu-nav">
-          <?php wp_nav_menu(); ?>
-        </ul>
-      </nav>
-
-      <a href="/" class="logo">
-        <img src="<?php bloginfo('template_directory');?>/img/logo/blockbar.jpg" alt="Blockbar logo" />
-      </a>
-
-      <div class="content">
+      <header id="header">
+        <a href="/" class="logo">
+          <img src="<?php bloginfo('template_directory');?>/img/logo/blockbar.jpg" alt="Blockbar logo" />
+        </a>
+        <?php wp_nav_menu(); ?>
+      </header>
+      <div class="content" id="content">

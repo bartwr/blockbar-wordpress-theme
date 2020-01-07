@@ -198,3 +198,23 @@ function save_post_handler($post_id) {
   update_post_meta($post_id, 'session-url', 'This will be the Meetup URI 2');
 }
 // add_action('save_post', 'save_post_handler');
+
+// Multiple category pages have custom order
+// https://wordpress.stackexchange.com/a/55538
+function wpa55535_pre_get_posts( $query ){
+  // if this is a category page
+  if( $query->is_category ):
+      // if cat = 53 (blog), set order to DESC
+      if( $query->query_vars['category_name'] == 'blog' ):
+          $query->set( 'order', 'DESC' );
+      // if cat = 4, set order to ASC
+      elseif( $query->query_vars['category_name'] == 'events' ):
+          $meta_query = [];
+          $meta_query[] = array('key' => 'session-date', 'value' => date('Y-m-d', strtotime('now')), 'compare' => '>=');
+          $query->set('order', 'ASC');
+          $query->set('meta_query', $meta_query);
+      endif;
+  endif;
+  return $query;
+}
+add_action( 'pre_get_posts', 'wpa55535_pre_get_posts' );

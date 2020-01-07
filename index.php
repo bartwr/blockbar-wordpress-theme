@@ -19,40 +19,43 @@ get_header();
 &nbsp;
  -->
 
-<?php get_template_part( 'content', get_post_format() ); ?>
-
-<h2 style="width: 360px;">Latest <a href="https://twitter.com/blockbar070" target="_blank">tweets</a></h2>
-
 <?php
-echo do_shortcode('[fts_twitter twitter_name=blockbar070 tweets_count=2 cover_photo=no stats_bar=yes show_retweets=no show_replies=no search=%23blockbar%20OR%20%23biw070%20OR%20%40blockbar070%20OR%20%40the_hague_tech]');
+get_template_part( 'content', get_post_format() );
 ?>
 
-<style type="text/css">
-  
-.Index-community-posts {
-  width: 200px;
-  max-width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.Index-community-post {
-  width: 280px;
-  max-width: 100%;
-  margin: 8px;
-}
-.Index-title {
-  display: block;
-  font-weight: bold;
-  font-size: 20px;
-  margin: 10px 0 20px;
-}
-img.img-responsive.responsive--full {
-  width: 100%;
-  margin: 0 auto;
-}
+<div class="posts-overview">
+<?php
+if(is_front_page()):
+  query_posts('cat=4&showposts=2'); while (have_posts()) : the_post();
+  ?>
+    <div class="post">
 
-</style>
+      <a href="<?php the_permalink(); ?>" class="post-header" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>');"></a>
+
+      <div class="post-body">
+        <div class="the-post-meta">
+          <span class="the-post-meta-category">
+            <?php wp_title('') ?>
+          </span>
+          <span class="the-post-meta-date">
+            <?php
+            $session_date = get_post_meta(get_the_ID(), 'session-date', true);
+            echo ($session_date ? date(get_option('date_format'), strtotime($session_date)) : get_the_date());
+            ?>
+          </span>
+        </div>
+        <h1 class="the-post-title">
+          <a href="<?php the_permalink(); ?>" id="post-<?php the_ID(); ?>" class="post-title" data-id="<?php the_id(); ?>">
+            <?php the_title(); ?>
+          </a>
+        </h1>
+      </div>
+    </div>
+  <?php
+  endwhile;
+  wp_reset_query();
+endif;
+?>
+</div>
 
 <?php include 'footer.php'; ?>

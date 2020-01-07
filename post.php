@@ -2,6 +2,10 @@
   
   <?php if(is_page()) { ?>
 
+    <h1 class="the-post-title">
+      <?php the_title(); ?>
+    </h1>
+
     <?php the_content(__('(lees meer...)')); ?>
 
   <?php } else { ?>
@@ -10,6 +14,9 @@
 
       <div class="the-post-content">
         <div class="the-post-content-body">
+
+          <h1 class="the-post-title">
+          </h1>
 
           <style>
           .the-post-info {
@@ -33,7 +40,7 @@
           </style>
 
           <?php if(get_post_meta(get_the_ID(), 'session-url', true)): ?>
-            <div class="the-post-info">
+            <div class="the-post-info" style="display: none">
               <div class="the-post-notice">
                 <p>
                   This is a community post. Community posts are articles shared by people who are regular guests at <a href="/" style="font-weight: normal;">Blockbar The Hague</a>.
@@ -48,7 +55,11 @@
             </div>
           <?php endif; ?>
 
-          <h1 class="the-post-title"><?php the_title(); ?></h1>
+          <h1 class="the-post-title">
+            <?php the_title(); ?>
+          </h1>
+
+          <div class="post-header" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>');"></div>
 
           <p class="the-post-meta">
             <?php the_date( 'F j, Y', 'Date: ', '', true );

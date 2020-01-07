@@ -30,6 +30,39 @@
           <a href="https://twitter.com/blockbar070" target="_blank">@blockbar070</a>
         </p>
 
+        <?php
+        echo do_shortcode('[fts_twitter twitter_name=blockbar070 tweets_count=6 cover_photo=no stats_bar=yes show_retweets=no show_replies=no search=%23blockbar%20OR%20%23biw070%20OR%20%40blockbar070%20OR%20%40the_hague_tech]');
+        ?>
+
+        <style type="text/css">
+        /*
+        .Index-community-posts {
+          width: 200px;
+          text-align: center;
+          max-width: 100%;
+          margin: 0 auto;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        .Index-community-post {
+          width: 280px;
+          max-width: 100%;
+          margin: 8px;
+        }
+        .Index-title {
+          display: block;
+          font-weight: bold;
+          font-size: 20px;
+          margin: 10px 0 20px;
+        }
+        img.img-responsive.responsive--full {
+          width: 100%;
+          margin: 0 auto;
+        }
+        */
+        </style>
+
       </div>
 
     </div>
