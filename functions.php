@@ -3,6 +3,8 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+define('MEETUP__POST_CATEGORY_ID', 57);
+
 function new_excerpt_length($len) {
   return 55;
 }
@@ -144,21 +146,27 @@ function register_my_menus() {
  }
  add_action( 'init', 'register_my_menus' );
 
-// https://stackoverflow.com/a/2260274
-function filter_handler( $data , $postarr ){
-  // For "New post" clicks -> Do nothing
-  if($data['post_title'] == 'Auto Draft') {
-    return $data;
-  }
+/*
+  If Meetup post is saved -> sync to meetup.com
+*/
+add_action('save_post', 'save_post_handler');
+function save_post_handler($post_id) {
+  global $post;
+
   // If post content is empty -> do nothing
-  if(strlen($data['post_content']) <= 0) {
-    return $data;
+  if(strlen($post->post_content) <= 0) {
+    return;
   }
-  // Get post ID
-  $my_post_id = $postarr['ID'];
-  // Modify data
-  $data['post_title'] = $data['post_title'] . '..';
-  // Return updated data object
-  return $data;
+
+  // Check if this post should be on Meetup
+  $post_categories = wp_get_post_categories($post_id);
+  $doUpdateMeetup = in_array(MEETUP__POST_CATEGORY_ID, $post_categories);
+
+  // Stop if we don't have to do anything with meetup
+  if(! $doUpdateMeetup) {
+    return;
+  }
+
+  // Update session URL
+  update_post_meta($post_id, 'session-url', 'This will be the Meetup URI 2');
 }
-add_filter( 'wp_insert_post_data', 'filter_handler', 10, 2 );
