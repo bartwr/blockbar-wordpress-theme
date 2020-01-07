@@ -149,7 +149,18 @@ function register_my_menus() {
 /*
   If Meetup post is saved -> sync to meetup.com
 */
-add_action('save_post', 'save_post_handler');
+function meetupDataIsValid($data) {
+  return true;
+}
+
+function addMeetupEvent($data) {
+  return;
+}
+
+function updateMeetupEvent($data) {
+  return;
+}
+
 function save_post_handler($post_id) {
   global $post;
 
@@ -167,6 +178,23 @@ function save_post_handler($post_id) {
     return;
   }
 
+  // Stop if post data is incomplete
+  if(! meetupDataIsValid($post) ) {
+    return;
+  }
+
+  // Check if this is a new Meetup
+  if( strlen(get_post_meta($post_id, 'session-url') ) <= 5) {
+    // If so: Post new update with this posts's data
+    addMeetupEvent($post);
+  }
+
+  // Or update if this is an existing meetup
+  else if( strpos(get_post_meta($post_id, 'session-url'), 'https://www.meetup.com/blockbar/events/') > -1 ) {
+    updateMeetupEvent($post);
+  }
+
   // Update session URL
   update_post_meta($post_id, 'session-url', 'This will be the Meetup URI 2');
 }
+// add_action('save_post', 'save_post_handler');
