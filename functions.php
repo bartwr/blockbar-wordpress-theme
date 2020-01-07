@@ -143,3 +143,22 @@ function register_my_menus() {
    );
  }
  add_action( 'init', 'register_my_menus' );
+
+// https://stackoverflow.com/a/2260274
+function filter_handler( $data , $postarr ){
+  // For "New post" clicks -> Do nothing
+  if($data['post_title'] == 'Auto Draft') {
+    return $data;
+  }
+  // If post content is empty -> do nothing
+  if(strlen($data['post_content']) <= 0) {
+    return $data;
+  }
+  // Get post ID
+  $my_post_id = $postarr['ID'];
+  // Modify data
+  $data['post_title'] = $data['post_title'] . '..';
+  // Return updated data object
+  return $data;
+}
+add_filter( 'wp_insert_post_data', 'filter_handler', 10, 2 );
