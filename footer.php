@@ -67,6 +67,11 @@
 
     </div>
 
+    <?php wp_nav_menu(); ?>
+
+    <br />
+    <br />
+
     <script type="text/javascript" src="<?php bloginfo('template_directory');?>/js/blog-overview.js"></script>
 
   </body>

@@ -156,7 +156,12 @@ a:hover {
   display: block;
   background: rgba(0,0,0,0.05) center center no-repeat;
   background-size: cover;
-  min-height: 300px;
+  min-height: 200px;
+}
+@media(min-width: 480px) {
+  .post-header {
+    min-height: 300px;
+  }
 }
 .post-body {
   padding: 16px;
@@ -307,7 +312,6 @@ a:hover {
 }
 
 #twitter-feed-blockbar070 {
-  /*max-width: 380px;*/
   margin: 0 auto;
   padding: 20px 0;
   display: flex;
@@ -395,13 +399,11 @@ a:hover {
 .slidesjs-previous {
   left: 5px;
   display: none;
-  /*background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDEwMDAgMTAwMDsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMDAgMTAwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRURFREVEO30KCS5zdDF7ZmlsbDojMTkxOTE5O30KCS5zdDJ7b3BhY2l0eTowLjI7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT48Zz48cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjEyNSw1MDAgODc1LDEyNSA4NzUsODc1ICAiLz48cG9seWdvbiBjbGFzcz0ic3QxIiBwb2ludHM9IjgzMy4zLDgwNy42IDIxOC4yLDUwMCA4MzMuMywxOTIuNCAgIi8+PHBvbHlnb24gY2xhc3M9InN0MiIgcG9pbnRzPSIxMjUsNTAwIDM3NSwzNzUgNDA2LDQwNiA3ODEuOCw3ODEuOSA4NzUsODc1ICAiLz48L2c+PC9zdmc+') center center no-repeat;*/
   background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4IiB3aWR0aD0iNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMwLjgzIDMyLjY3bC05LjE3LTkuMTcgOS4xNy05LjE3LTIuODMtMi44My0xMiAxMiAxMiAxMnoiLz48cGF0aCBkPSJNMC0uNWg0OHY0OGgtNDh6IiBmaWxsPSJub25lIi8+PC9zdmc+') center center no-repeat;
 }
 
 .slidesjs-next {
   right: 5px;
-  /*background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDEwMDAgMTAwMDsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMDAgMTAwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRURFREVEO30KCS5zdDF7ZmlsbDojMTkxOTE5O30KCS5zdDJ7b3BhY2l0eTowLjI7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT48Zz48cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9Ijg3NSw1MDAgMTI1LDg3NSAxMjUsMTI1ICAiLz48cG9seWdvbiBjbGFzcz0ic3QxIiBwb2ludHM9IjE2Ni43LDE5Mi40IDc4MS44LDUwMCAxNjYuNyw4MDcuNiAgIi8+PHBvbHlnb24gY2xhc3M9InN0MiIgcG9pbnRzPSI4NzUsNTAwIDYyNSw2MjUgNTk0LDU5NCAyMTguMiwyMTguMSAxMjUsMTI1ICAiLz48L2c+PC9zdmc+') center center no-repeat;*/
   background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4IiB3aWR0aD0iNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE3LjE3IDMyLjkybDkuMTctOS4xNy05LjE3LTkuMTcgMi44My0yLjgzIDEyIDEyLTEyIDEyeiIvPjxwYXRoIGQ9Ik0wLS4yNWg0OHY0OGgtNDh6IiBmaWxsPSJub25lIi8+PC9zdmc+') center center no-repeat;
 }
 
@@ -413,7 +415,7 @@ a:hover {
   padding: 10px;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
 }
-#menu-main-menu {
+.menu {
   margin: 20px auto 0px auto !important;
   display: flex;
   justify-content: center;
@@ -426,17 +428,17 @@ a:hover {
     top: 0;
     background: linear-gradient(180deg, #fff, #fff, rgba(255, 255, 255, 0.9), transparent 100%);
   }
-  .menu-main-menu-container #menu-main-menu li a {
+  .menu-main-menu-container .menu li a {
     height: 50px;
   }
 }
-#menu-main-menu,
-#menu-main-menu li {
+.menu,
+.menu li {
   list-style:none;
   margin:0;
   padding:0;
 }
-#menu-main-menu li a {
+.menu li a {
   margin: 5px 5px;
   display: block;
   min-width: 100px;
@@ -451,14 +453,14 @@ a:hover {
   transition: background 0.4s, color 0.1s, height 0.4s;
 }
 
-#menu-main-menu li:hover a {
+.menu li:hover a {
   background: rgba(50, 72, 232, 0.2);
 }
-#menu-main-menu li.current_page_item a,
-#menu-main-menu li.current-post-parent a,
-#menu-main-menu li.current-menu-item a,
-#menu-main-menu li a:active,
-#menu-main-menu li a:focus {
+.menu li.current_page_item a,
+.menu li.current-post-parent a,
+.menu li.current-menu-item a,
+.menu li a:active,
+.menu li a:focus {
   color: #fff;
   background: rgba(50, 72, 232, 1);
 }

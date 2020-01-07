@@ -211,6 +211,7 @@ function wpa55535_pre_get_posts( $query ){
       elseif( $query->query_vars['category_name'] == 'events' ):
           $meta_query = [];
           $meta_query[] = array('key' => 'session-date', 'value' => date('Y-m-d', strtotime('now')), 'compare' => '>=');
+          $query->set('orderby', 'session-date');
           $query->set('order', 'ASC');
           $query->set('meta_query', $meta_query);
       endif;
