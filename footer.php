@@ -6,7 +6,7 @@
       <div id="footer-content"> 
 
         <!-- Begin MailChimp Signup Form -->
-        <div id="mc_embed_signup">
+        <div id="mc_embed_signup" style="margin-top: 50px;">
         <form action="https://blockbar.us18.list-manage.com/subscribe/post?u=40364c709ffe1e3ebbe61c3b6&amp;id=bf69a1ab8b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
             <div id="mc_embed_signup_scroll">
           
@@ -26,12 +26,8 @@
         </div>
         <!--End mc_embed_signup-->
 
-        <p>
-          <a href="https://twitter.com/blockbar070" target="_blank">@blockbar070</a>
-        </p>
-
         <?php
-        echo do_shortcode('[fts_twitter twitter_name=blockbar070 tweets_count=6 cover_photo=no stats_bar=yes show_retweets=no show_replies=no search=%23blockbar%20OR%20%23biw070%20OR%20%40blockbar070%20OR%20%40the_hague_tech]');
+        // echo do_shortcode('[fts_twitter twitter_name=blockbar070 tweets_count=6 cover_photo=no stats_bar=yes show_retweets=no show_replies=no search=%23blockbar%20OR%20%23biw070%20OR%20%40blockbar070%20OR%20%40the_hague_tech]');
         ?>
 
         <style type="text/css">
@@ -67,9 +63,14 @@
 
     </div>
 
-    <?php wp_nav_menu(); ?>
+    <div style="margin: 50px 0;">
+      <?php wp_nav_menu(); ?>
+    </div>
 
-    <br />
+    <p align="center">
+      <a href="https://twitter.com/blockbar070" target="_blank">@blockbar070</a>
+    </p>
+
     <br />
 
     <script type="text/javascript" src="<?php bloginfo('template_directory');?>/js/blog-overview.js"></script>
