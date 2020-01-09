@@ -1,4 +1,7 @@
-<?php while (have_posts()) : the_post(); ?>
+<?php while (have_posts()) : the_post();
+
+  $session_url = get_post_meta(get_the_ID(), 'session-url', true)
+  ?>
   
   <?php if(is_page()) { ?>
 
@@ -14,9 +17,6 @@
 
       <div class="the-post-content">
         <div class="the-post-content-body">
-
-          <h1 class="the-post-title">
-          </h1>
 
           <style>
           .the-post-info {
@@ -59,10 +59,8 @@
             <?php the_title(); ?>
           </h1>
 
-          <div class="post-header" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>');"></div>
-
-          <p class="the-post-meta">
-            <?php the_date( 'F j, Y', 'Date: ', '', true );
+          <div class="the-post-meta">
+            <?php the_date( 'F j, Y', '', '', true );
             echo ' | ';
             $post_categories = wp_get_post_categories( get_the_ID() );
             $cats = array();
@@ -76,12 +74,26 @@
             }
             echo $catsString;
             ?>
+          </div>
 
-          </p>
+          <div class="post-header" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>');"></div>
+
+          <?php if($session_url): ?>
+          <div class="the-post-meta">
+            <div class="the-post-rsvp-button-container button-container-1">
+              <span class="mas">Please RSVP on meetup</span>
+              <a href="<?php echo $session_url; ?>" target="_blank" class="the-post-rsvp-button">
+                <span>Please RSVP on meetup</span>
+              </a>
+            </div>
+          </div>
+          <?php endif; ?>
 
           <?php the_content(__('(lees meer...)')); ?>
+
         </div>
-      </div>        
+      </div>
+    </div>
     <?php } ?>
 
   <?php endwhile; ?>

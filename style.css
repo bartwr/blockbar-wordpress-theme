@@ -187,12 +187,29 @@ a:hover {
   border-bottom: none;
 }
 .the-post-meta {
-/*  color: #f00;
-  font-size: 14px;*/
+  text-align: center;
   font-size: 16px;
   line-height: 25px;
-  height: 25px;
+  min-height: 25px;
+  margin: 10px 0;
   color: #3498db;
+}
+.the-post-rsvp-button-container {
+  margin: 25px 0 0 0;
+}
+.the-post-rsvp-button {
+  background: #f64060;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+}
+.the-post-rsvp-button-container span {
+  text-align: center;
+  color: #fff;
+  padding: 10px 20px;
+  display: block;
+  font-weight: bold;
 }
 .the-post-meta-category {
   display: inline-block;
@@ -479,5 +496,88 @@ a:hover {
   .the-post-title {
     font-size: 40px;
     line-height: 48px;
+  }
+}
+
+/* buttons */
+
+.button-container-1 {
+  position: relative;
+  width: 240px;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-right: auto;
+  margin-left: auto;
+}
+.button-container-1 a {
+  width: 101%;
+  height: 100%;
+  background: #f64060;
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-animation: ani2 0.7s steps(22) forwards;
+  animation: ani2 0.7s steps(22) forwards;
+}
+.button-container-1 a:hover {
+  -webkit-animation: ani 0.7s steps(22) forwards;
+  animation: ani 0.7s steps(22) forwards;
+}
+
+.button-container-1:hover .mas {
+}
+.mas {
+  background: #d80026;
+  display: inline-block;
+  position: absolute;
+  color: #000;
+  text-align: center;
+  width: 101%;
+  position: absolute;
+  overflow: hidden;
+}
+
+@-webkit-keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+@-webkit-keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
   }
 }

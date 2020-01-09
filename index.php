@@ -4,21 +4,6 @@ $isIndex = $_SERVER['REQUEST_URI'] == '/';
 get_header();
 ?>
 
-<!-- <p>
-  Do you work on a blockchain/distributed/crypto project? <a href="https://www.meetup.com/blockbar/events/nzwqxpyxkbrb/" target="_blank">Join Blockbar</a>, the <b>blockchain cowork</b> space in <b>The Hague</b>.
-</p>
-
-<p>
-  At Blockbar you can work on blockchain projects, develop ideas & get to know other people in the scene.
-</p>
-
-<p>
-  Be welcome to join at Blockbar at <a href="https://www.thehaguetech.nl/" target="_blank">The Hague Tech</a>. Every Friday, from 10am. <a href="https://www.meetup.com/blockbar/" target="_blank">RSVP on Meetup</a>.
-</p>
-
-&nbsp;
- -->
-
 <?php
 get_template_part( 'content', get_post_format() );
 ?>
